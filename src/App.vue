@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="h-screen bg-green">
-    <header class="bg-white flex justify-center items-center z-50 h-20 relative">
+<!--     <header class="bg-white flex justify-center items-center z-50 h-20 relative">
       <div>header (new repo)</div>
-    </header>
+    </header> -->
 
     <div class="fixed z-50 bg-black text-white py-3 px-4" style="font-size: 10px">
       {{ deltaYcounter }} | {{ percentage }}%
@@ -12,45 +12,77 @@
       vertical version
     </div>
 
+    <first-scene
+      v-if="!isVertical"
+      :deltaYcounter="deltaYcounter"
+      :windowHeight="windowHeight"
+      :windowWidth="windowWidth"
+    ></first-scene>
+
     <first-case-study
       v-if="!isVertical"
       :deltaYcounter="deltaYcounter"
       :windowHeight="windowHeight"
       :windowWidth="windowWidth"
     ></first-case-study>
+
+    <second-case-study
+      v-if="!isVertical"
+      :deltaYcounter="deltaYcounter"
+      :windowHeight="windowHeight"
+      :windowWidth="windowWidth"
+    ></second-case-study>
+
+    <third-case-study
+      v-if="!isVertical"
+      :deltaYcounter="deltaYcounter"
+      :windowHeight="windowHeight"
+      :windowWidth="windowWidth"
+    ></third-case-study>
+
+    <ending
+      v-if="!isVertical"
+      :deltaYcounter="deltaYcounter"
+      :windowHeight="windowHeight"
+      :windowWidth="windowWidth"
+    ></ending>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import FirstScene from './components/first-scene.vue'
 import FirstCaseStudy from './components/first-case-study.vue'
+import SecondCaseStudy from './components/second-case-study.vue'
+import ThirdCaseStudy from './components/third-case-study.vue'
+import Ending from './components/ending.vue'
 import _ from 'lodash'
 
 export default {
   name: 'App',
 
-  components: {
-    FirstCaseStudy
-  },
+  components: { FirstScene, FirstCaseStudy, SecondCaseStudy, ThirdCaseStudy, Ending },
 
   data() {
     return {
       deltaY: 0,
-      deltaYcounter: 0,
       y: 0
     }
   },
 
   computed: {
+    ...mapState(['deltaYcounter']),
+
     windowWidth() {
       return window.innerWidth
     },
 
     windowHeight() {
-      return window.innerHeight - 80
+      return window.innerHeight
     },
 
     percentage() {
-      let percentage = ((100 * this.deltaYcounter) / 25700).toFixed(1)
+      let percentage = ((100 * this.deltaYcounter) / 26500).toFixed(1)
 
       if (percentage < 0) {
         return 0
@@ -69,14 +101,14 @@ export default {
   },
 
   methods: {
-    setCounterToCero() {
-      this.deltaYcounter = 0
+    setCounterToZero() {
+      this.$store.state.deltaYcounter = 0
     },
 
     scrollCounter(e) {
       this.deltaY = e.deltaY
 
-      this.deltaYcounter += Math.floor(this.deltaY)
+      this.$store.state.deltaYcounter += Math.floor(this.deltaY)
     },
 
     touchStart(e) {
@@ -84,7 +116,7 @@ export default {
     },
 
     touchCounter(e) {
-      this.deltaYcounter += Math.floor(-1 * .05 * (this.y - e.touches[0].pageY))
+      this.$store.state.deltaYcounter += Math.floor(.2 * (this.y - e.touches[0].pageY))
     }
   },
 
@@ -94,9 +126,11 @@ export default {
 
     window.addEventListener(
       'wheel',
-      _.throttle(this.scrollCounter, 10),
+      _.throttle(this.scrollCounter, 5),
       {passive: true}
     )
+
+    console.log(this.$store)
 
     window.addEventListener(
       'touchstart',

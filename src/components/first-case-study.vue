@@ -19,7 +19,7 @@
         duration: 500
       }
     ]"
-    :triggerAt="6200"
+    :triggerAt="fifthStepTriggerAtPoint + 1900"
     :deltaYcounter="deltaYcounter"
   >
     <!-- step 1 -->
@@ -43,7 +43,7 @@
           duration: 500
         }
       ]"
-      :triggerAt="0"
+      :triggerAt="firstStepTriggerAtPoint"
       :deltaYcounter="deltaYcounter"
     >
       <img
@@ -73,12 +73,12 @@
           duration: 200
         }
       ]"
-      :triggerAt="300"
+      :triggerAt="firstStepTriggerAtPoint + 300"
       :deltaYcounter="deltaYcounter"
     >
       <div
-        class="bg-grey"
-        :style="{ width: (windowWidth + 400) + 'px', height: windowHeight + 'px', transform: 'skewX(-10deg)'}"
+        class="bg-grey h-screen"
+        :style="{ width: (windowWidth + 400) + 'px', transform: 'skewX(-10deg)'}"
       ></div>
     </animate-x>
     <!-- step 1 end -->
@@ -104,7 +104,7 @@
           duration: 500
         }
       ]"
-      :triggerAt="1500"
+      :triggerAt="secondStepTriggerAtPoint + 1000"
       :deltaYcounter="deltaYcounter"
       style="width: 100%"
     >
@@ -112,7 +112,7 @@
         class="absolute"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .2,
+            translateX: windowWidth * .15,
             translateY: -windowHeight,
             rotate: 0,
             scale: 1,
@@ -120,7 +120,7 @@
             duration: 0
           },
           {
-            translateX: windowWidth * .2,
+            translateX: windowWidth * .15,
             translateY: 0,
             rotate: 0,
             scale: 1,
@@ -128,7 +128,7 @@
             duration: 500
           }
         ]"
-        :triggerAt="500"
+        :triggerAt="secondStepTriggerAtPoint"
         :deltaYcounter="deltaYcounter"
       >
         <img
@@ -141,23 +141,23 @@
         class="absolute"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .2,
-            translateY: windowHeight * .3 * 1.05,
+            translateX: windowWidth * .15,
+            translateY: windowHeight * .3,
             rotate: 0,
             scale: 1 * scaleFactorTxt,
             opacity: 0,
             duration: 0
           },
           {
-            translateX: windowWidth * .2,
-            translateY: windowHeight * .3 * 1.05,
+            translateX: windowWidth * .15,
+            translateY: windowHeight * .3,
             rotate: 0,
             scale: 1 * scaleFactorTxt,
             opacity: 1,
             duration: 500
           }
         ]"
-        :triggerAt="800"
+        :triggerAt="secondStepTriggerAtPoint + 300"
         :deltaYcounter="deltaYcounter"
         style="transform-origin: top left;"
       >
@@ -174,7 +174,7 @@
         class="absolute"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .5,
+            translateX: windowWidth * .45,
             translateY: windowHeight * 0.1,
             rotate: 0,
             scale: 0,
@@ -182,7 +182,7 @@
             duration: 0
           },
           {
-            translateX: windowWidth * .5,
+            translateX: windowWidth * .45,
             translateY: windowHeight * 0.1,
             rotate: 0,
             scale: 1,
@@ -190,7 +190,7 @@
             duration: 500
           }
         ]"
-        :triggerAt="1000"
+        :triggerAt="secondStepTriggerAtPoint + 500"
         :deltaYcounter="deltaYcounter"
       >
         <img
@@ -222,7 +222,7 @@
           duration: 500
         }
       ]"
-      :triggerAt="2800"
+      :triggerAt="thirdStepTriggerAtPoint + 1200"
       :deltaYcounter="deltaYcounter"
     >
       <animate-x
@@ -245,7 +245,7 @@
             duration: 500
           }
         ]"
-        :triggerAt="1700"
+        :triggerAt="thirdStepTriggerAtPoint"
         :deltaYcounter="deltaYcounter"
       >
         <img
@@ -274,7 +274,7 @@
             duration: 500
           }
         ]"
-        :triggerAt="1800"
+        :triggerAt="thirdStepTriggerAtPoint + 100"
         :deltaYcounter="deltaYcounter"
       >
         <img
@@ -303,7 +303,7 @@
             duration: 500
           }
         ]"
-        :triggerAt="1900"
+        :triggerAt="thirdStepTriggerAtPoint + 200"
         :deltaYcounter="deltaYcounter"
       >
         <img
@@ -332,7 +332,7 @@
             duration: 500
           }
         ]"
-        :triggerAt="2000"
+        :triggerAt="thirdStepTriggerAtPoint + 300"
         :deltaYcounter="deltaYcounter"
       >
         <img
@@ -361,7 +361,7 @@
             duration: 500
           }
         ]"
-        :triggerAt="2100"
+        :triggerAt="thirdStepTriggerAtPoint + 400"
         :deltaYcounter="deltaYcounter"
       >
         <img
@@ -390,7 +390,7 @@
             duration: 500
           }
         ]"
-        :triggerAt="2200"
+        :triggerAt="thirdStepTriggerAtPoint + 500"
         :deltaYcounter="deltaYcounter"
       >
         <img
@@ -435,7 +435,7 @@
           duration: 500
         }
       ]"
-      :triggerAt="3900"
+      :triggerAt="fourthStepTriggerAtPoint + 700"
       :deltaYcounter="deltaYcounter"
     >
       <animate-x
@@ -458,20 +458,20 @@
             duration: 500
           }
         ]"
-        :triggerAt="3200"
+        :triggerAt="fourthStepTriggerAtPoint"
         :deltaYcounter="deltaYcounter"
       >
-        <img
-          :src="fourthStep[0]" alt="waves"
-          :style="{'height': windowHeight + 'px', 'width': windowWidth + 'px'}"
-        >
+        <div
+          class="w-screen h-screen bg-center bg-cover"
+          :style="{'background-image': `url(${fourthStep[0]}`}"
+        ></div>
       </animate-x>
 
       <animate-x
         class="absolute"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .05,
+            translateX: 0,
             translateY: windowHeight * .4,
             rotate: 0,
             scale: 0,
@@ -479,7 +479,7 @@
             duration: 0
           },
           {
-            translateX: windowWidth * .05,
+            translateX: 0,
             translateY: windowHeight * .4,
             rotate: 0,
             scale: 1,
@@ -487,22 +487,22 @@
             duration: 500
           }
         ]"
-        :triggerAt="3300"
+        :triggerAt="fourthStepTriggerAtPoint + 100"
         :deltaYcounter="deltaYcounter"
       >
-        <img
-          :src="fourthStep[2]" alt="2000 miles of track in one week"
-          :style="{'height': windowHeight * .4 + 'px'}"
-        >
+        <div
+          class="w-screen bg-contain bg-center bg-no-repeat"
+          :style="{'background-image': `url(${fourthStep[2]}`, 'height': windowHeight * .35 + 'px'}"
+        ></div>
 
         <div class="sr-only">2000 miles of track in one week</div>
       </animate-x>
 
       <animate-x
-        class="absolute"
+        class="absolute z-10"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .1,
+            translateX: windowWidth * .09,
             translateY: windowHeight * .1,
             rotate: 0,
             scale: scaleFactorTxt,
@@ -510,7 +510,7 @@
             duration: 0
           },
           {
-            translateX: windowWidth * .1,
+            translateX: windowWidth * .09,
             translateY: windowHeight * .1,
             rotate: 0,
             scale: scaleFactorTxt,
@@ -518,7 +518,7 @@
             duration: 400
           }
         ]"
-        :triggerAt="3300"
+        :triggerAt="fourthStepTriggerAtPoint + 100"
         :deltaYcounter="deltaYcounter"
         style="transform-origin: top left;"
       >
@@ -529,7 +529,7 @@
         class="absolute"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .6,
+            translateX: windowWidth * .62,
             translateY: 0,
             rotate: 0,
             scale: 1,
@@ -537,7 +537,7 @@
             duration: 0
           },
           {
-            translateX: windowWidth * .6,
+            translateX: windowWidth * .62,
             translateY: 0,
             rotate: 0,
             scale: 1,
@@ -545,7 +545,7 @@
             duration: 500
           }
         ]"
-        :triggerAt="3300"
+        :triggerAt="fourthStepTriggerAtPoint + 100"
         :deltaYcounter="deltaYcounter"
       >
         <img
@@ -561,7 +561,7 @@
       class="absolute"
       :keyframes="[
         { // 0%
-          translateX: -500,
+          translateX: -3000,
           translateY: 0,
           rotate: 0,
           scale: 1,
@@ -569,7 +569,7 @@
           duration: 0
         },
         {
-          translateX: 200,
+          translateX: 0,
           translateY: 0,
           rotate: 0,
           scale: 1,
@@ -577,14 +577,18 @@
           duration: 1200
         }
       ]"
-      :triggerAt="4600"
+      :triggerAt="fifthStepTriggerAtPoint + 300"
       :deltaYcounter="deltaYcounter"
     >
-      <img
+<!--       <img
         :src="fifthStep[0]"
         alt="window view"
         :style="{height: windowHeight + 'px'}"
-      >
+      > -->
+      <div
+        class="h-screen bg-center bg-cover"
+        :style="{'background-image': `url(${fifthStep[0]}`, width: '6000px'}"
+      ></div>
     </animate-x>
 
     <animate-x
@@ -607,16 +611,21 @@
           duration: 300
         }
       ]"
-      :triggerAt="4300"
+      :triggerAt="fifthStepTriggerAtPoint"
       :deltaYcounter="deltaYcounter"
     >
-      <div class="relative" :style="{'left': !isBiggerRatio ? '50%' : ''}">
+      <div
+        class="w-screen h-screen bg-center bg-cover"
+        :style="{'background-image': `url(${fifthStep[1]}`}"
+      ></div>
+
+<!--       <div class="relative" :style="{'left': !isBiggerRatio ? '50%' : ''}">
         <img
           :src="fifthStep[1]"
           alt="man inside a train PLPR carriage monitoring the rails"
           :style="styleBg"
         >
-      </div>
+      </div> -->
     </animate-x>
 
     <animate-x
@@ -639,7 +648,7 @@
           duration: 500
         }
       ]"
-      :triggerAt="5600"
+      :triggerAt="fifthStepTriggerAtPoint + 1300"
       :deltaYcounter="deltaYcounter"
     >
       <img
@@ -662,8 +671,8 @@
 
 <script>
   import AnimateX from './animate-x.vue'
-  // import AnimateP from './animate-p.vue'
 
+  // first step
   import * as train from '../images/Parallax_first_casestudy/step1/CS_1_Inspection_train_whole.png'
 
   // second stepcd
@@ -694,13 +703,19 @@
     props: ['deltaYcounter', 'windowHeight', 'windowWidth'],
 
     data() {
+      let startingPoint = 1600
+
       return {
         firstStep: [],
         secondStep: [],
         thirdStep: [],
         fourthStep: [],
         fifthStep: [],
-        startingPoint: 0
+        firstStepTriggerAtPoint: startingPoint,
+        secondStepTriggerAtPoint: startingPoint + 500,
+        thirdStepTriggerAtPoint: startingPoint + 2000,
+        fourthStepTriggerAtPoint: startingPoint + 3500,
+        fifthStepTriggerAtPoint: startingPoint + 4600
       }
     },
 

@@ -6,6 +6,9 @@ module.exports = {
       white: '#fff',
       black: '#000',
       orange: '#ED7631'
+    },
+    inset: {
+      '1/2': '50%',
     }
   },
   variants: {},
