@@ -45,19 +45,18 @@
       :triggerAt="0"
       :deltaYcounter="deltaYcounter"
     >
-      <img
-        :src="sky1"
-        alt="skyline city background"
-        class="w-full"
-      >
-
       <div
-        class="text-center absolute w-full" style="top: 1%;"
-        :style="{transform: `scale(${scaleFactorTxt})`}"
+        class="w-screen h-screen bg-center bg-cover"
+        :style="{'background-image': `url(${sky1}`}"
       >
-        <h1 style="color: #001c26; font-size: 30px; font-weight: 400; margin-bottom: 0px">Sustainability at Network Rail</h1>
+        <div
+          class="text-center absolute w-full" style="top: 1%;"
+          :style="{transform: `scale(${scaleFactorTxt})`}"
+        >
+          <h1 style="color: #001c26; font-size: 30px; font-weight: 400; margin-bottom: 0px">Sustainability at Network Rail</h1>
 
-        <h2 style="color: #3fb498; font-size: 20px; font-weight: 400;">PART ONE</h2>
+          <h2 style="color: #3fb498; font-size: 20px; font-weight: 400;">PART ONE</h2>
+        </div>
       </div>
     </animate-x>
 
@@ -84,11 +83,10 @@
       :triggerAt="0"
       :deltaYcounter="deltaYcounter"
     >
-      <img
-        :src="hills2"
-        alt="hills background 1"
-        class="w-full"
-      >
+      <div
+        class="w-screen h-screen bg-center bg-cover"
+        :style="{'background-image': `url(${hills2}`}"
+      ></div>
     </animate-x>
 
     <animate-x
@@ -114,11 +112,10 @@
       :triggerAt="0"
       :deltaYcounter="deltaYcounter"
     >
-      <img
-        :src="train3"
-        alt="animation train coming from the left"
-        class="first-train animation-config relative w-full"
-      >
+      <div
+        class="w-screen h-screen bg-center bg-cover first-train animation-config relative"
+        :style="{'background-image': `url(${train3}`}"
+      ></div>
     </animate-x>
 
     <animate-x
@@ -144,11 +141,10 @@
       :triggerAt="0"
       :deltaYcounter="deltaYcounter"
     >
-      <img
-        :src="hills4"
-        alt="hills background 2"
-        class="w-full"
-      >
+      <div
+        class="w-screen h-screen bg-center bg-cover"
+        :style="{'background-image': `url(${hills4}`}"
+      ></div>
     </animate-x>
 
     <animate-x
@@ -174,10 +170,10 @@
       :triggerAt="0"
       :deltaYcounter="deltaYcounter"
     >
-      <img
-        :src="train5"
-        alt="animation train coming from the right"
-        class="second-train animation-config relative w-full">
+      <div
+        class="w-screen h-screen bg-center bg-cover second-train animation-config relative"
+        :style="{'background-image': `url(${train5}`}"
+      ></div>
     </animate-x>
 
     <animate-x
@@ -203,11 +199,10 @@
       :triggerAt="0"
       :deltaYcounter="deltaYcounter"
     >
-      <img
-        :src="viaduct6"
-        alt="viaduct"
-        class="w-full"
-      >
+      <div
+        class="w-screen h-screen bg-center bg-cover"
+        :style="{'background-image': `url(${viaduct6}`}"
+      ></div>
     </animate-x>
 
     <animate-x
@@ -233,11 +228,10 @@
       :triggerAt="0"
       :deltaYcounter="deltaYcounter"
     >
-      <img
-        :src="hills7"
-        alt="hills background 3"
-        class="w-full"
-      >
+      <div
+        class="w-screen h-screen bg-center bg-cover"
+        :style="{'background-image': `url(${hills7}`}"
+      ></div>
     </animate-x>
 
     <animate-x
@@ -263,11 +257,10 @@
       :triggerAt="0"
       :deltaYcounter="deltaYcounter"
     >
-      <img
-        :src="train8"
-        alt="animation train coming from the left"
-        class="third-train animation-config relative w-full"
-      >
+      <div
+        class="w-screen h-screen bg-center bg-cover third-train animation-config relative"
+        :style="{'background-image': `url(${train8}`}"
+      ></div>
     </animate-x>
 
     <animate-x
@@ -293,11 +286,10 @@
       :triggerAt="0"
       :deltaYcounter="deltaYcounter"
     >
-      <img
-        :src="hills9"
-        alt="hills background 4"
-        class="w-full"
-      >
+      <div
+        class="w-screen h-screen bg-center bg-cover"
+        :style="{'background-image': `url(${hills9}`}"
+      ></div>
     </animate-x>
 
     <animate-x
@@ -323,15 +315,14 @@
       :triggerAt="0"
       :deltaYcounter="deltaYcounter"
     >
-      <img
-        :src="horses10"
-        alt="horses"
-        class="w-full"
-      >
+      <div
+        class="w-screen h-screen bg-center bg-cover"
+        :style="{'background-image': `url(${horses10}`}"
+      ></div>
     </animate-x>
 
     <animate-x
-      class="absolute"
+      class="absolute origin-top"
       :keyframes="[
         {
           translateX: 0,
@@ -343,7 +334,7 @@
         },
         {
           translateX: 0,
-          translateY: windowHeight * .5,
+          translateY: windowHeight * .4,
           rotate: 0,
           scale: scaleFactorTxt,
           opacity: 1,
@@ -353,7 +344,7 @@
       :triggerAt="900"
       :deltaYcounter="deltaYcounter"
     >
-      <div class="text-center w-screen border text-white">
+      <div class="text-center w-screen text-white">
         <p style="font-size: 24px;">
           Part of improving the railway is making<br>
           sure we're efficient.
@@ -385,12 +376,12 @@
   // parallax scene
   import * as sky1 from '../images/Parallax_first_scene_V6/1_Sky_and_city-01.png'
   import * as hills2 from '../images/Parallax_first_scene_V6/2_Hills-01.png'
-  import * as train3 from '../images/Parallax_first_scene_V6/3_Train-01.png'
+  import * as train3 from '../images/Parallax_first_scene_V6/3_Train-01-center.png'
   import * as hills4 from '../images/Parallax_first_scene_V6/4_Hills-01.png'
   import * as train5 from '../images/Parallax_first_scene_V6/5_Train-01.png'
   import * as viaduct6 from '../images/Parallax_first_scene_V6/6_Viaduct_Bridge-01.png'
   import * as hills7 from '../images/Parallax_first_scene_V6/7_Hills-01.png'
-  import * as train8 from '../images/Parallax_first_scene_V6/8_Train-01.png'
+  import * as train8 from '../images/Parallax_first_scene_V6/8_Train-01-center.png'
   import * as hills9 from '../images/Parallax_first_scene_V6/9_Hills-01.png'
   import * as horses10 from '../images/Parallax_first_scene_V6/10_Foreground_and_horses-01.png'
 
