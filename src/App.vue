@@ -122,15 +122,12 @@ export default {
 
   mounted() {
     document.body.style.overflow = "hidden";
-    document.body.style.html = "hidden";
 
     window.addEventListener(
       'wheel',
       _.throttle(this.scrollCounter, 5),
       {passive: true}
     )
-
-    console.log(this.$store)
 
     window.addEventListener(
       'touchstart',
@@ -146,3 +143,5 @@ export default {
   }
 }
 </script>
+
+

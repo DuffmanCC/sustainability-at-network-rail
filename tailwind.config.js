@@ -9,6 +9,12 @@ module.exports = {
     },
     inset: {
       '1/2': '50%',
+    },
+    backgroundSize: {
+      'auto': 'auto',
+      'cover': 'cover',
+      'contain': 'contain',
+      'auto-100': 'auto 100%'
     }
   },
   variants: {},
