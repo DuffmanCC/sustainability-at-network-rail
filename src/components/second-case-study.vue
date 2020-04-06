@@ -130,7 +130,7 @@
         <img
           :src="secondStep[0]"
           alt="rotating circle 1"
-          style="height: 140px; width: auto"
+          :style="{height: windowHeight * .15 + 'px'}"
         >
       </animate-x>
 
@@ -160,7 +160,7 @@
         <img
           :src="secondStep[1]"
           alt="rotating circle 2"
-          style="height: 110px; width: auto"
+          :style="{height: windowHeight * .10 + 'px'}"
         >
       </animate-x>
 
@@ -190,7 +190,7 @@
         <img
           :src="secondStep[1]"
           alt="rotating circle 3"
-          style="height: 140px; width: auto"
+          :style="{height: windowHeight * .15 + 'px'}"
         >
       </animate-x>
 
@@ -220,7 +220,7 @@
         <img
           :src="secondStep[2]"
           alt="rotating circle 4"
-          style="height: 150px; width: auto"
+          :style="{height: windowHeight * .17 + 'px'}"
         >
       </animate-x>
 
@@ -250,7 +250,7 @@
         <img
           :src="secondStep[3]"
           alt="rotating circle 5"
-          style="height: 50px; width: auto"
+          :style="{height: windowHeight * .08 + 'px'}"
         >
       </animate-x>
 
@@ -589,13 +589,8 @@
         :triggerAt="fourthStepTriggerAtPoint + 300"
         :deltaYcounter="deltaYcounter"
       >
-<!--         <img
-          :src="fourthStep[1]"
-          alt="zig zag pattern fade in"
-          :style="{'height': windowHeight * .5 + 'px'}"
-        > -->
         <div
-          class="w-screen bg-center bg-cover"
+          class="w-screen bg-center bg-auto-100 bg-no-repeat"
           :style="{'background-image': `url(${fourthStep[1]}`, 'height': windowHeight * .5 + 'px' }"
         >
           <div class="sr-only">20% OF THE COST OF NEW TRACK</div>
@@ -630,20 +625,17 @@
       :triggerAt="fifthStepTriggerAtPoint"
       :deltaYcounter="deltaYcounter"
     >
-      <div class="relative" :style="{'left': !isBiggerRatio ? '50%' : ''}">
-        <img
-          :src="fifthStep[0]"
-          alt="worker inside carriage"
-          :style="styleBg"
-        >
-      </div>
+      <div
+        class="w-screen h-screen bg-center bg-cover"
+        :style="{'background-image': `url(${fifthStep[0]}`}"
+      ></div>
     </animate-x>
 
     <animate-x
       class="absolute"
       :keyframes="[
         { // 0%
-          translateX: -windowWidth * .5,
+          translateX: -3000,
           translateY: 0,
           rotate: 0,
           scale: 1,
@@ -662,11 +654,10 @@
       :triggerAt="fifthStepTriggerAtPoint + 300"
       :deltaYcounter="deltaYcounter"
     >
-      <img
-        :src="fifthStep[1]"
-        alt="windows view"
-        :style="{'height': windowHeight + 'px'}"
-      >
+      <div
+        class="h-screen bg-center bg-cover"
+        :style="{'background-image': `url(${fifthStep[1]}`, width: '6000px'}"
+      ></div>
     </animate-x>
 
     <animate-x
@@ -758,28 +749,6 @@
     computed: {
       scaleFactorTxt() {
         return this.windowHeight / 836
-      },
-
-      isBiggerRatio() {
-        let bgAspectRation = 1921 / 1081
-
-        let innerAspectRation = this.windowWidth / this.windowHeight
-
-        return (innerAspectRation > bgAspectRation)
-      },
-
-      styleBg() {
-        if (this.isBiggerRatio) {
-          return {
-            'width': this.windowWidth + 'px'
-          }
-        }
-
-        return {
-          height: this.windowHeight + 'px',
-          position: 'relative',
-          left: '-50%'
-        }
       }
     },
 

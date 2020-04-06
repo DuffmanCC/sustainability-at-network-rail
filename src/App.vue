@@ -127,8 +127,6 @@ export default {
       {passive: true}
     )
 
-    console.log(this.$store)
-
     window.addEventListener(
       'touchstart',
       this.touchStart,

@@ -361,7 +361,7 @@
         class="absolute"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .15,
+            translateX: windowWidth * .2,
             translateY: windowHeight * .25,
             rotate: 0,
             scale: scaleFactorTxt,
@@ -369,7 +369,7 @@
             duration: 0
           },
           {
-            translateX: windowWidth * .15,
+            translateX: windowWidth * .2,
             translateY: windowHeight * .25,
             rotate: 0,
             scale: scaleFactorTxt,
@@ -380,14 +380,14 @@
         :triggerAt="thirdStepTriggerAtPoint + 800"
         :deltaYcounter="deltaYcounter"
       >
-        <p style="font-size: 330px; line-height: 350px; color: #86bd45; font-weight: bold">1.26m</p>
+        <p style="font-size: 330px; letter-spacing: -20px; line-height: 350px; color: #86bd45; font-weight: bold">1.26m</p>
       </animate-x>
 
       <animate-x
         class="absolute z-10"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .2,
+            translateX: windowWidth * .3,
             translateY: windowHeight * .7,
             rotate: 0,
             scale: scaleFactorTxt,
@@ -395,7 +395,7 @@
             duration: 0
           },
           {
-            translateX: windowWidth * .2,
+            translateX: windowWidth * .3,
             translateY: windowHeight * .7,
             rotate: 0,
             scale: scaleFactorTxt,
@@ -694,7 +694,7 @@
             duration: 0
           },
           {
-            translateX: 50,
+            translateX: windowWidth * .05,
             translateY: 0,
             rotate: 0,
             scale: scaleFactorTxt,
@@ -705,7 +705,7 @@
         :triggerAt="fourthStepTriggerAtPoint"
         :deltaYcounter="deltaYcounter"
       >
-        <p style="letter-spacing: -10px; font-size: 350px; line-height: 450px; color: #0098bd; font-weight: bold;">93,000</p>
+        <p style="letter-spacing: -20px; font-size: 330px; line-height: 450px; color: #0098bd; font-weight: bold;">93,000</p>
       </animate-x>
 
       <animate-x
@@ -957,7 +957,7 @@
         class="absolute z-10"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .75,
+            translateX: windowWidth * .72,
             translateY: windowHeight * .3,
             rotate: 0,
             scale: 0,
@@ -965,7 +965,7 @@
             duration: 0
           },
           {
-            translateX: windowWidth * .75,
+            translateX: windowWidth * .72,
             translateY: windowHeight * .3,
             rotate: 0,
             scale: 1,
@@ -1374,28 +1374,6 @@
     computed: {
       scaleFactorTxt() {
         return this.windowHeight / 836 //900 ?
-      },
-
-      isBiggerRatio() {
-        let bgAspectRation = 1921 / 1081
-
-        let innerAspectRation = this.windowWidth / this.windowHeight
-
-        return (innerAspectRation > bgAspectRation)
-      },
-
-      styleBg() {
-        if (this.isBiggerRatio) {
-          return {
-            'width': this.windowWidth + 'px'
-          }
-        }
-
-        return {
-          height: this.windowHeight + 'px',
-          position: 'relative',
-          left: '-50%'
-        }
       }
     },
 

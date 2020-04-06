@@ -580,11 +580,6 @@
       :triggerAt="fifthStepTriggerAtPoint + 300"
       :deltaYcounter="deltaYcounter"
     >
-<!--       <img
-        :src="fifthStep[0]"
-        alt="window view"
-        :style="{height: windowHeight + 'px'}"
-      > -->
       <div
         class="h-screen bg-center bg-cover"
         :style="{'background-image': `url(${fifthStep[0]}`, width: '6000px'}"
@@ -618,14 +613,6 @@
         class="w-screen h-screen bg-center bg-cover"
         :style="{'background-image': `url(${fifthStep[1]}`}"
       ></div>
-
-<!--       <div class="relative" :style="{'left': !isBiggerRatio ? '50%' : ''}">
-        <img
-          :src="fifthStep[1]"
-          alt="man inside a train PLPR carriage monitoring the rails"
-          :style="styleBg"
-        >
-      </div> -->
     </animate-x>
 
     <animate-x
@@ -725,28 +712,6 @@
        */
       scaleFactorTxt() {
         return this.windowHeight / 836
-      },
-
-      isBiggerRatio() {
-        let bgAspectRation = 1921 / 1081
-
-        let innerAspectRation = this.windowWidth / this.windowHeight
-
-        return (innerAspectRation > bgAspectRation)
-      },
-
-      styleBg() {
-        if (this.isBiggerRatio) {
-          return {
-            'width': this.windowWidth + 'px'
-          }
-        }
-
-        return {
-          height: this.windowHeight + 'px',
-          position: 'relative',
-          left: '-50%'
-        }
       }
     },
 

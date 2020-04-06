@@ -11,7 +11,6 @@ export default new Vuex.Store({
   mutations: {
     setCounterToCero() {
       this.state.deltaYcounter = 0
-      console.log('hi')
     }
   }
 })
