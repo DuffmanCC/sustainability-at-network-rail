@@ -291,7 +291,7 @@
             translateX: windowWidth * 0.5,
             translateY: windowHeight * 0.45,
             rotate: 0,
-            scale: this.scaleFactorTxt,
+            scale: scaleFactorTxt,
             opacity: 0,
             duration: 0
           },
@@ -299,7 +299,7 @@
             translateX: windowWidth * 0.5,
             translateY: windowHeight * 0.45,
             rotate: 0,
-            scale: this.scaleFactorTxt,
+            scale: scaleFactorTxt,
             opacity: 1,
             duration: 500
           }
@@ -307,7 +307,7 @@
         :triggerAt="secondStepTriggerAtPoint + 200"
         :deltaYcounter="deltaYcounter"
       >
-        <div class="w-screen">
+        <div class="w-screen absolute">
           <h2 style="color: #ec6608; font-weight: 600; font-size: 45px">Repairing</h2>
 
           <p style="font-size: 24px; margin-bottom: 1rem; font-weight: 300;">
@@ -543,7 +543,7 @@
             translateX: windowWidth * .1,
             translateY: windowHeight * .1,
             rotate: 0,
-            scale: this.scaleFactorTxt,
+            scale: scaleFactorTxt,
             opacity: 0,
             duration: 0
           },
@@ -551,7 +551,7 @@
             translateX: windowWidth * .1,
             translateY: windowHeight * .1,
             rotate: 0,
-            scale: this.scaleFactorTxt,
+            scale: scaleFactorTxt,
             opacity: 1,
             duration: 500
           }
@@ -559,7 +559,7 @@
         :triggerAt="fourthStepTriggerAtPoint + 100"
         :deltaYcounter="deltaYcounter"
       >
-        <p class="w-screen" style="font-size: 30px;">
+        <p class="w-screen absolute" style="font-size: 30px;">
           This specialist technique and equipment<br>
           repairs the rails in a fraction of the time it<br>
           would take to replace them, a saving of
@@ -595,8 +595,6 @@
         >
           <div class="sr-only">20% OF THE COST OF NEW TRACK</div>
         </div>
-
-
       </animate-x>
     </animate-x>
     <!-- step 3 end -->

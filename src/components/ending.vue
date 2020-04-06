@@ -3,12 +3,13 @@
     <!-- final step -->
     <animate-x
       class="absolute"
+      style="transform-origin: top center"
       :keyframes="[
         {
           translateX: 0,
           translateY: windowHeight * .2,
           rotate: 0,
-          scale: 1,
+          scale: scaleFactorTxt,
           opacity: 0,
           duration: 0
         },
@@ -16,7 +17,7 @@
           translateX: 0,
           translateY: windowHeight * .2,
           rotate: 0,
-          scale: 1,
+          scale: scaleFactorTxt,
           opacity: 1,
           duration: 500
         }
@@ -67,20 +68,21 @@
 
     <animate-x
       class="absolute w-screen"
+      style="transform-origin: top center"
       :keyframes="[
         {
           translateX: 0,
           translateY: windowHeight,
           rotate: 0,
-          scale: 1,
+          scale: scaleFactorTxt,
           opacity: 1,
           duration: 0
         },
         {
           translateX: 0,
-          translateY: 400,
+          translateY: windowHeight * 0.5,
           rotate: 0,
-          scale: 1,
+          scale: scaleFactorTxt,
           opacity: 1,
           duration: 500
         }
@@ -118,6 +120,12 @@
         greenArrows: '',
         startingPoint: 25700
       }
+    },
+
+    computed: {
+      scaleFactorTxt() {
+        return this.windowHeight / 836 //900 ?
+      },
     },
 
     methods: {

@@ -4,12 +4,12 @@
       <div>header (new repo)</div>
     </header> -->
 
-    <div class="fixed z-50 bg-black text-white py-3 px-4" style="font-size: 10px">
+<!--     <div class="fixed z-50 bg-black text-white py-3 px-4" style="font-size: 10px">
       {{ deltaYcounter }} | {{ percentage }}%
-    </div>
+    </div> -->
 
     <div v-if="isVertical" class="text-white text-6xl flex justify-center items-center h-screen">
-      vertical version
+      Rotate your phone and refresh the page
     </div>
 
     <first-scene

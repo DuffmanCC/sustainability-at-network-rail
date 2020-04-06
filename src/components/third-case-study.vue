@@ -282,7 +282,7 @@
         :triggerAt="secondStepTriggerAtPoint + 200"
         :deltaYcounter="deltaYcounter"
       >
-        <div class="w-screen">
+        <div class="w-screen absolute">
           <h2 style="color: #ec6608; font-weight: 600; font-size: 45px">Repairing</h2>
 
           <p style="font-size: 24px; margin-bottom: 1rem">
@@ -328,18 +328,18 @@
         style="transform-origin: top left;"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .05,
-            translateY: windowHeight * .1,
+            translateX: 0,
+            translateY: 0,
             rotate: 0,
-            scale: scaleFactorTxt,
+            scale: 1,
             opacity: 0,
             duration: 0
           },
           {
-            translateX: windowWidth * .05,
-            translateY: windowHeight * .1,
+            translateX: 0,
+            translateY: 0,
             rotate: 0,
-            scale: scaleFactorTxt,
+            scale: 1,
             opacity: 1,
             duration: 500
           }
@@ -347,13 +347,13 @@
         :triggerAt="thirdStepTriggerAtPoint + 400"
         :deltaYcounter="deltaYcounter"
       >
-        <div class="w-screen">
-          <p style="font-size: 26px;">
-            40 to 100 wagons loaded with a varity of materials arrive each<br>
-            week. The materials are graded and sorted into what can be<br>
-            reused on the network and what can be sold.<br>
-            In 2016/17:
-          </p>
+        <div
+          class="w-screen h-screen bg-center bg-cover"
+          :style="{'background-image': `url(${thirdStep[4]}`}"
+        >
+          <div class="sr-only">
+            40 to 100 wagons loaded with a varity of materials arrive each week. The materials are graded and sorted into what can be reused on the network and what can be sold. In 2016/17:
+          </div>
         </div>
       </animate-x>
 
@@ -361,18 +361,18 @@
         class="absolute"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .2,
-            translateY: windowHeight * .25,
+            translateX: 0,
+            translateY: 0,
             rotate: 0,
-            scale: scaleFactorTxt,
+            scale: 1,
             opacity: 0,
             duration: 0
           },
           {
-            translateX: windowWidth * .2,
-            translateY: windowHeight * .25,
+            translateX: 0,
+            translateY: 0,
             rotate: 0,
-            scale: scaleFactorTxt,
+            scale: 1,
             opacity: 1,
             duration: 500
           }
@@ -380,15 +380,25 @@
         :triggerAt="thirdStepTriggerAtPoint + 800"
         :deltaYcounter="deltaYcounter"
       >
-        <p style="font-size: 330px; letter-spacing: -20px; line-height: 350px; color: #86bd45; font-weight: bold">1.26m</p>
-      </animate-x>
+        <div
+          class="w-screen h-screen bg-center bg-contain"
+          :style="{'background-image': `url(${thirdStep[3]}`}"
+        >
+          <div class="sr-only">
+            1.26 millions
+          </div>
+        </div>
+<!--         <p style="font-size: 330px; letter-spacing: -20px; line-height: 350px; color: #86bd45; font-weight: bold">1.26m</p>
+ -->
+    </animate-x>
 
       <animate-x
         class="absolute z-10"
+        style="transform-origin: top left"
         :keyframes="[
           { // 0%
             translateX: windowWidth * .3,
-            translateY: windowHeight * .7,
+            translateY: windowHeight * .75,
             rotate: 0,
             scale: scaleFactorTxt,
             opacity: 0,
@@ -396,7 +406,7 @@
           },
           {
             translateX: windowWidth * .3,
-            translateY: windowHeight * .7,
+            translateY: windowHeight * .75,
             rotate: 0,
             scale: scaleFactorTxt,
             opacity: 1,
@@ -408,11 +418,19 @@
       >
         <div class="w-screen font-bold">
           <p style="font-size: 30px; color: #00983b">
-            tonnes of ballast (or 15<br>
-            Washington Monuments' worth)<br>
-            were recycled. A saving of £6m!
+            tonnes of ballast (or 15 Washington<br>
+            Monuments' worth) were recycled.<br>
+            A saving of £6m!
           </p>
         </div>
+<!--         <div
+          class="w-screen bg-center bg-contain bg-no-repeat border"
+          :style="{'background-image': `url(${thirdStep[5]}`, height: windowHeight * .2 + 'px'}"
+        >
+          <div class="sr-only">
+            tonnes of ballast (or 15 Washington Monuments' worth) were recycled. A saving of £6m!
+          </div>
+        </div> -->
       </animate-x>
 
       <animate-x
@@ -1328,6 +1346,9 @@
   import * as obelisc from '../images/Parallax_third_casestudy/step3/obelisc.png'
   import * as ballast from '../images/Parallax_third_casestudy/step3/ballast_bag.png'
   import * as bgShapes1 from '../images/Parallax_third_casestudy/step3/background_shapes.png'
+  import * as bigText from '../images/Parallax_third_casestudy/step3/big_text.png'
+  import * as smallText from '../images/Parallax_third_casestudy/step3/small_text.png'
+  import * as smallTextGreen from '../images/Parallax_third_casestudy/step3/small_text_green_cut.png'
 
   // fourth step
   import * as bgShapes2 from '../images/Parallax_third_casestudy/step4/bg_shapes.png'
@@ -1380,7 +1401,7 @@
     mounted() {
       this.firstStep.push(train)
       this.secondStep.push(greenLogo, whiteShapes)
-      this.thirdStep.push(obelisc, ballast, bgShapes1)
+      this.thirdStep.push(obelisc, ballast, bgShapes1, bigText, smallText, smallTextGreen)
       this.fourthStep.push(bgShapes2, bitOfTrack, eiffelTower)
       this.fifthStep.push(character, bubble1, bubble2, bgShapes3)
       this.sixthStep.push(background, digger, train2, drillMan, bubble3)
