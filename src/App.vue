@@ -121,9 +121,6 @@ export default {
   },
 
   mounted() {
-    document.body.style.overflow = "hidden";
-    document.body.style.html = "hidden";
-
     window.addEventListener(
       'wheel',
       _.throttle(this.scrollCounter, 5),
@@ -146,3 +143,20 @@ export default {
   }
 }
 </script>
+
+<style>
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+</style>
