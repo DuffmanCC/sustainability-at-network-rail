@@ -587,7 +587,7 @@
     </animate-x>
 
     <animate-x
-      class="absolute z-10"
+      class="absolute"
       :keyframes="[
         { // 0%
           translateX: 0,
