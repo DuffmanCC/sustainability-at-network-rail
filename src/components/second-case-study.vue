@@ -649,7 +649,7 @@
           duration: 500
         }
       ]"
-      :triggerAt="fifthStepTriggerAtPoint + 300"
+      :triggerAt="fifthStepTriggerAtPoint + 200"
       :deltaYcounter="deltaYcounter"
     >
       <div

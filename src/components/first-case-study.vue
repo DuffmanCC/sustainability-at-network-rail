@@ -577,7 +577,7 @@
           duration: 1200
         }
       ]"
-      :triggerAt="fifthStepTriggerAtPoint + 300"
+      :triggerAt="fifthStepTriggerAtPoint + 100"
       :deltaYcounter="deltaYcounter"
     >
       <div
@@ -587,7 +587,7 @@
     </animate-x>
 
     <animate-x
-      class="absolute"
+      class="absolute z-10"
       :keyframes="[
         { // 0%
           translateX: 0,

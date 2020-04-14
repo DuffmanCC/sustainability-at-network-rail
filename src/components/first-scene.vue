@@ -50,7 +50,7 @@
         :style="{'background-image': `url(${sky1}`}"
       >
         <div
-          class="text-center absolute w-full" style="top: 1%;"
+          class="text-center absolute w-full" style="top: 3%;"
           :style="{transform: `scale(${scaleFactorTxt})`}"
         >
           <h1 style="color: #001c26; font-size: 30px; font-weight: 400; margin-bottom: 0px">Sustainability at Network Rail</h1>
@@ -334,7 +334,7 @@
         },
         {
           translateX: 0,
-          translateY: windowHeight * .4,
+          translateY: windowHeight * .5,
           rotate: 0,
           scale: scaleFactorTxt,
           opacity: 1,
