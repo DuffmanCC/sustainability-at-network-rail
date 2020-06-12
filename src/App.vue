@@ -1,5 +1,10 @@
 <template>
-  <div id="app" class="h-screen bg-green">
+  <div
+    id="app"
+    class="h-screen bg-green"
+    v-touch:start="startHandler"
+    v-touch:end="endHandler"
+  >
 <!--     <header class="bg-white flex justify-center items-center z-50 h-20 relative">
       <div>header (new repo)</div>
     </header> -->
@@ -65,8 +70,9 @@ export default {
 
   data() {
     return {
-      deltaY: 0,
-      y: 0
+      startY: 0,
+      accumulatedY: 0,
+      partialY: 0
     }
   },
 
@@ -106,17 +112,27 @@ export default {
     },
 
     scrollCounter(e) {
-      this.deltaY = e.deltaY
-
-      this.$store.state.deltaYcounter += Math.floor(this.deltaY)
+      this.$store.state.deltaYcounter += parseInt(e.deltaY)
     },
 
-    touchStart(e) {
-      this.y = Math.floor(e.touches[0].pageY)
+    startHandler(e) {
+      this.startY = parseInt(e.changedTouches[0].clientY)
     },
 
-    touchCounter(e) {
-      this.$store.state.deltaYcounter += Math.floor(.2 * (this.y - e.touches[0].pageY))
+    movingHandler(e) {
+      this.partialY = parseInt(e.changedTouches[0].clientY) - this.startY
+
+      this.$store.state.deltaYcounter = this.accumulatedY + this.partialY
+    },
+
+    endHandler() {
+      this.accumulatedY += this.partialY
+
+      this.$store.state.deltaYcounter = this.accumulatedY
+    },
+
+    swipeHandler(direction) {
+      this.swipeDirection = direction
     }
   },
 
@@ -128,14 +144,8 @@ export default {
     )
 
     window.addEventListener(
-      'touchstart',
-      this.touchStart,
-      {passive: true}
-    );
-
-    window.addEventListener(
       'touchmove',
-      _.throttle(this.touchCounter, 10),
+      _.throttle(this.movingHandler, 5),
       {passive: true}
     );
   }

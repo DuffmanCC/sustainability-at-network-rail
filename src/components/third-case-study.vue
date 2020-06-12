@@ -328,7 +328,7 @@
         style="transform-origin: top left;"
         :keyframes="[
           { // 0%
-            translateX: 0,
+            translateX: -100,
             translateY: 0,
             rotate: 0,
             scale: 1,
@@ -336,7 +336,7 @@
             duration: 0
           },
           {
-            translateX: 0,
+            translateX: -100,
             translateY: 0,
             rotate: 0,
             scale: 1,
@@ -348,7 +348,7 @@
         :deltaYcounter="deltaYcounter"
       >
         <div
-          class="w-screen h-screen bg-center bg-cover"
+          class="w-screen h-screen bg-left bg-cover"
           :style="{'background-image': `url(${thirdStep[4]}`}"
         >
           <div class="sr-only">
@@ -364,7 +364,7 @@
             translateX: 0,
             translateY: 0,
             rotate: 0,
-            scale: 1,
+            scale: .8,
             opacity: 0,
             duration: 0
           },
@@ -372,7 +372,7 @@
             translateX: 0,
             translateY: 0,
             rotate: 0,
-            scale: 1,
+            scale: .8,
             opacity: 1,
             duration: 500
           }
@@ -397,7 +397,7 @@
         style="transform-origin: top left"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .3,
+            translateX: windowWidth * .34,
             translateY: windowHeight * .75,
             rotate: 0,
             scale: scaleFactorTxt,
@@ -405,7 +405,7 @@
             duration: 0
           },
           {
-            translateX: windowWidth * .3,
+            translateX: windowWidth * .34,
             translateY: windowHeight * .75,
             rotate: 0,
             scale: scaleFactorTxt,
@@ -659,7 +659,7 @@
             translateX: windowWidth * 0.03,
             translateY: windowHeight * .3,
             rotate: 0,
-            scale: 1,
+            scale: .9,
             opacity: 1,
             duration: 500
           }
@@ -757,7 +757,7 @@
       </animate-x>
 
       <animate-x
-        class="absolute"
+        class="absolute z-10"
         style="transform-origin: top left"
         :keyframes="[
           { // 0%

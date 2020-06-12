@@ -288,7 +288,7 @@
         class="absolute"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * 0.5,
+            translateX: windowWidth * 0.55,
             translateY: windowHeight * 0.45,
             rotate: 0,
             scale: scaleFactorTxt,
@@ -296,7 +296,7 @@
             duration: 0
           },
           {
-            translateX: windowWidth * 0.5,
+            translateX: windowWidth * 0.55,
             translateY: windowHeight * 0.45,
             rotate: 0,
             scale: scaleFactorTxt,
