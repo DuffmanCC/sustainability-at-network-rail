@@ -1,6 +1,6 @@
 {
-  "name": "first-case-study",
-  "version": "0.1.0",
+  "name": "sustainability-at-network-rail",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
