@@ -660,7 +660,7 @@
   import AnimateX from './animate-x.vue'
 
   // first step
-  import * as train from '../images/Parallax_first_casestudy/step1/CS_1_Inspection_train_whole.png'
+  import * as train from '../images/Parallax_first_casestudy/step1/CS_1_Inspection_train_whole_2.png'
 
   // second stepcd
   import * as whiteDrops from '../images/Parallax_first_casestudy/step2/white_drops.png'

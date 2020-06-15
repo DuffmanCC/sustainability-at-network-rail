@@ -1031,7 +1031,7 @@
         class="absolute"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .15,
+            translateX: 0,
             translateY: -windowHeight,
             rotate: 0,
             scale: 1,
@@ -1039,8 +1039,8 @@
             duration: 0
           },
           {
-            translateX: windowWidth * .15,
-            translateY: windowHeight * .15,
+            translateX: 0,
+            translateY: 0,
             rotate: 0,
             scale: 1,
             opacity: 1,
@@ -1050,27 +1050,26 @@
         :triggerAt="fifthStepTriggerAtPoint"
         :deltaYcounter="deltaYcounter"
       >
-        <img
-          :src="fifthStep[0]"
-          alt="character"
-          :style="{height: windowHeight * .6 + 'px'}"
-        >
+        <div
+          class="w-screen h-screen bg-contain  bg-no-repeat aqui"
+          :style="{'background-image': `url(${fifthStep[0]}`}"
+        ></div>
       </animate-x>
 
       <animate-x
         class="absolute z-20"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .04,
-            translateY: windowHeight * .1,
+            translateX: 0,
+            translateY: 0,
             rotate: 0,
             scale: 1,
             opacity: 0,
             duration: 0
           },
           {
-            translateX: windowWidth * .04,
-            translateY: windowHeight * .1,
+            translateX: 0,
+            translateY: 0,
             rotate: 0,
             scale: 1,
             opacity: 1,
@@ -1080,11 +1079,10 @@
         :triggerAt="fifthStepTriggerAtPoint + 500"
         :deltaYcounter="deltaYcounter"
       >
-        <img
-          :src="fifthStep[1]"
-          alt="speech bubble"
-          :style="{height: windowHeight * .3 + 'px'}"
-        >
+        <div
+          class="w-screen h-screen bg-contain bg-no-repeat"
+          :style="{'background-image': `url(${fifthStep[1]}`}"
+        ></div>
 
         <p class="sr-only">
           Recycling is so important to us, not only as a company but as a country too.
@@ -1095,16 +1093,16 @@
         class="absolute z-20"
         :keyframes="[
           { // 0%
-            translateX: windowWidth * .5,
-            translateY: windowHeight * .25,
+            translateX: 0,
+            translateY: 0,
             rotate: 0,
             scale: 1,
             opacity: 0,
             duration: 0
           },
           {
-            translateX: windowWidth * .5,
-            translateY: windowHeight * .25,
+            translateX: 0,
+            translateY: 0,
             rotate: 0,
             scale: 1,
             opacity: 1,
@@ -1114,11 +1112,10 @@
         :triggerAt="fifthStepTriggerAtPoint + 500"
         :deltaYcounter="deltaYcounter"
       >
-        <img
-          :src="fifthStep[2]"
-          alt="speech bubble"
-          :style="{height: windowHeight * .3 + 'px'}"
-        >
+        <div
+          class="w-screen h-screen bg-contain bg-no-repeat"
+          :style="{'background-image': `url(${fifthStep[2]}`}"
+        ></div>
 
         <p class="sr-only">
           To be able to reuse the materials that we recieve here, in the ways that we do, makes me feel incredibly proud to be part of the precess.
@@ -1356,9 +1353,9 @@
   import * as eiffelTower from '../images/Parallax_third_casestudy/step4/eiffel_tower.png'
 
   // fifth step
-  import * as character from '../images/Parallax_third_casestudy/step5/character.png'
-  import * as bubble1 from '../images/Parallax_third_casestudy/step5/speech_bubble1.png'
-  import * as bubble2 from '../images/Parallax_third_casestudy/step5/speech_bubble2.png'
+  import * as character from '../images/Parallax_third_casestudy/step5/full-character.png'
+  import * as bubble1 from '../images/Parallax_third_casestudy/step5/full-speech_bubble1.png'
+  import * as bubble2 from '../images/Parallax_third_casestudy/step5/full-speech_bubble2.png'
   import * as bgShapes3 from '../images/Parallax_third_casestudy/step5/bg_shapes.png'
 
   // sixth step

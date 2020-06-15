@@ -9,9 +9,9 @@
       <div>header (new repo)</div>
     </header> -->
 
-<!--     <div class="fixed z-50 bg-black text-white py-3 px-4" style="font-size: 10px">
+    <div class="fixed z-50 bg-black text-white py-3 px-4" style="font-size: 10px">
       {{ deltaYcounter }} | {{ percentage }}%
-    </div> -->
+    </div>
 
     <div v-if="isVertical" class="text-white text-6xl flex justify-center items-center h-screen">
       Rotate your phone and refresh the page
@@ -70,9 +70,7 @@ export default {
 
   data() {
     return {
-      startY: 0,
-      accumulatedY: 0,
-      partialY: 0
+
     }
   },
 
@@ -113,26 +111,40 @@ export default {
 
     scrollCounter(e) {
       this.$store.state.deltaYcounter += parseInt(e.deltaY)
+
+      if (this.$store.state.deltaYcounter < 0) {
+        this.$store.state.deltaYcounter = 0
+      }
     },
 
     startHandler(e) {
-      this.startY = parseInt(e.changedTouches[0].clientY)
+      if (this.isTouchDevice) {
+        this.$store.state.startY = parseInt(e.changedTouches[0].clientY)
+      }
     },
 
     movingHandler(e) {
-      this.partialY = parseInt(e.changedTouches[0].clientY) - this.startY
+      if (this.isTouchDevice) {
+        this.$store.state.partialY = parseInt(e.changedTouches[0].clientY) - this.$store.state.startY
 
-      this.$store.state.deltaYcounter = this.accumulatedY + this.partialY
+        this.$store.state.deltaYcounter = this.$store.state.accumulatedY + this.$store.state.partialYs
+      }
     },
 
     endHandler() {
-      this.accumulatedY += this.partialY
+      if (this.isTouchDevice) {
+        this.$store.state.accumulatedY += this.$store.state.partialY
 
-      this.$store.state.deltaYcounter = this.accumulatedY
+        this.$store.state.deltaYcounter = this.$store.state.accumulatedY
+      }
     },
 
     swipeHandler(direction) {
       this.swipeDirection = direction
+    },
+
+    isTouchDevice() {
+      return 'ontouchstart' in window
     }
   },
 
