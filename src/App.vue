@@ -17,7 +17,7 @@
       v-if="isVertical"
       class="text-white text-6xl flex text-center justify-center items-center h-screen px-12"
     >
-      Rotate your phone
+      Rotate your device
     </div>
 
     <first-scene
