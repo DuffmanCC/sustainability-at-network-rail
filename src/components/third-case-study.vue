@@ -1051,7 +1051,7 @@
         :deltaYcounter="deltaYcounter"
       >
         <div
-          class="w-screen h-screen bg-contain  bg-no-repeat aqui"
+          class="w-screen h-screen bg-contain bg-no-repeat"
           :style="{'background-image': `url(${fifthStep[0]}`}"
         ></div>
       </animate-x>

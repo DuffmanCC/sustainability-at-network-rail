@@ -9,12 +9,15 @@
       <div>header (new repo)</div>
     </header> -->
 
-    <div class="fixed z-50 bg-black text-white py-3 px-4" style="font-size: 10px">
+<!--     <div class="fixed z-50 bg-black text-white py-3 px-4" style="font-size: 10px">
       {{ deltaYcounter }} | {{ percentage }}%
-    </div>
+    </div> -->
 
-    <div v-if="isVertical" class="text-white text-6xl flex justify-center items-center h-screen">
-      Rotate your phone and refresh the page
+    <div
+      v-if="isVertical"
+      class="text-white text-6xl flex text-center justify-center items-center h-screen px-12"
+    >
+      Rotate your phone
     </div>
 
     <first-scene
@@ -68,12 +71,6 @@ export default {
 
   components: { FirstScene, FirstCaseStudy, SecondCaseStudy, ThirdCaseStudy, Ending },
 
-  data() {
-    return {
-
-    }
-  },
-
   computed: {
     ...mapState(['deltaYcounter']),
 
@@ -105,6 +102,10 @@ export default {
   },
 
   methods: {
+    reloadPage() {
+      location.reload()
+    },
+
     setCounterToZero() {
       this.$store.state.deltaYcounter = 0
     },
@@ -127,7 +128,7 @@ export default {
       if (this.isTouchDevice) {
         this.$store.state.partialY = parseInt(e.changedTouches[0].clientY) - this.$store.state.startY
 
-        this.$store.state.deltaYcounter = this.$store.state.accumulatedY + this.$store.state.partialYs
+        this.$store.state.deltaYcounter = this.$store.state.accumulatedY + this.$store.state.partialY
       }
     },
 
@@ -160,6 +161,17 @@ export default {
       _.throttle(this.movingHandler, 5),
       {passive: true}
     );
+
+    window.addEventListener(
+      'resize',
+      _.throttle(this.reloadPage, 5),
+      {passive: true}
+    );
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('wheel');
+    window.removeEventListener('touchmove');
   }
 }
 </script>
