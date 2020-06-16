@@ -126,7 +126,7 @@ export default {
 
     movingHandler(e) {
       if (this.isTouchDevice) {
-        this.$store.state.partialY = parseInt(e.changedTouches[0].clientY) - this.$store.state.startY
+        this.$store.state.partialY = -1 * (parseInt(e.changedTouches[0].clientY) - this.$store.state.startY)
 
         this.$store.state.deltaYcounter = this.$store.state.accumulatedY + this.$store.state.partialY
       }
