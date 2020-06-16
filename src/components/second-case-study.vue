@@ -479,10 +479,44 @@
           :style="{'height': windowHeight * .8 + 'px'}"
         >
       </animate-x>
+
+      <animate-x
+        class="absolute z-10"
+        :keyframes="[
+          { // 0%
+            translateX: windowWidth * .55,
+            translateY: windowHeight * .18,
+            rotate: 0,
+            scale: 1,
+            opacity: 0,
+            duration: 0
+          },
+          {
+            translateX: windowWidth * .55,
+            translateY: windowHeight * .18,
+            rotate: 0,
+            scale: 1,
+            opacity: 1,
+            duration: 500
+          }
+        ]"
+        :triggerAt="thirdStepTriggerAtPoint + 400"
+        :deltaYcounter="deltaYcounter"
+      >
+        <img
+          :src="thirdStep[3]"
+          alt="speech bubble"
+          :style="{'height': windowHeight * .18 + 'px'}"
+        >
+
+        <div class="sr-only">
+          <p>This is a spare of 'teeth' before they are fixed onto the milling train wheels.</p>
+        </div>
+      </animate-x>
     </animate-x>
     <!-- step 3 end -->
 
-    <!-- step 3 -->
+    <!-- step 4 -->
     <animate-x
       class="absolute"
       :keyframes="[
@@ -597,9 +631,9 @@
         </div>
       </animate-x>
     </animate-x>
-    <!-- step 3 end -->
+    <!-- step 4 end -->
 
-    <!-- step 4 -->
+    <!-- step 5 -->
     <animate-x
       class="absolute z-10"
       :keyframes="[
@@ -690,7 +724,7 @@
 
       <p class="sr-only">It means: less cost, less time to repair, less disruption for passengers!</p>
     </animate-x>
-    <!-- step 4 end -->
+    <!-- step 5 end -->
   </animate-x>
 </template>
 
@@ -712,6 +746,7 @@
   import * as worker from '../images/Parallax_second_casestudy/step3/worker.png'
   import * as arrows from '../images/Parallax_second_casestudy/step3/pattern.png'
   import * as screen from '../images/Parallax_second_casestudy/step3/screen.png'
+  import * as speech2 from '../images/Parallax_second_casestudy/step3/speech_bubble.png'
 
   // fourth step
   import * as zigzag from '../images/Parallax_second_casestudy/step4/zigzag.png'
@@ -755,7 +790,7 @@
 
       this.secondStep.push(spinCircle1, spinCircle2, spinCircle4, spinCircle5, staticCircles, bigCircle)
 
-      this.thirdStep.push(worker, arrows, screen)
+      this.thirdStep.push(worker, arrows, screen, speech2)
 
       this.fourthStep.push(zigzag, percentage)
 
