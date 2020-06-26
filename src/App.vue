@@ -7,10 +7,9 @@
   >
     <div
       v-if="loadingPercent < 100"
+      class="h-screen flex items-center justify-center"
     >
-      <div class="h-screen flex border-white border items-center justify-center">
-        <div class="text-white text-6xl ">Loading: {{ loaded }}</div>
-      </div>
+      <div class="text-white text-6xl ">Loading: {{ loaded }}</div>
     </div>
 
     <div v-else>
