@@ -630,6 +630,36 @@
           <div class="sr-only">20% OF THE COST OF NEW TRACK</div>
         </div>
       </animate-x>
+
+      <animate-x
+        class="absolute"
+        :keyframes="[
+          { // 0%
+            translateX: windowWidth * .7,
+            translateY: windowHeight * .07,
+            rotate: 0,
+            scale: 0,
+            opacity: 1,
+            duration: 0
+          },
+          {
+            translateX: windowWidth * .7,
+            translateY: windowHeight * .07,
+            rotate: 0,
+            scale: 1,
+            opacity: 1,
+            duration: 500
+          }
+        ]"
+        :triggerAt="fourthStepTriggerAtPoint + 300"
+        :deltaYcounter="deltaYcounter"
+      >
+        <img
+          :src="fourthStep[2]"
+          alt="butterflies"
+          :style="{'height': windowHeight * .25 + 'px'}"
+        >
+      </animate-x>
     </animate-x>
     <!-- step 4 end -->
 
@@ -751,6 +781,7 @@
   // fourth step
   import * as zigzag from '../images/Parallax_second_casestudy/step4/zigzag.png'
   import * as percentage from '../images/Parallax_second_casestudy/step4/20_percent.png'
+  import * as butterflies from '../images/Parallax_second_casestudy/step4/butterflies.png'
 
   // fifth step
   import * as carriage from '../images/Parallax_second_casestudy/step5/CS2_section_4_inside_carriage-01.png'
@@ -792,7 +823,7 @@
 
       this.thirdStep.push(worker, arrows, screen, speech2)
 
-      this.fourthStep.push(zigzag, percentage)
+      this.fourthStep.push(zigzag, percentage, butterflies)
 
       this.fifthStep.push(carriage, windowView, speech)
     }

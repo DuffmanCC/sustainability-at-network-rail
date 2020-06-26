@@ -283,16 +283,20 @@
         :deltaYcounter="deltaYcounter"
       >
         <div class="w-screen absolute">
-          <h2 style="color: #ec6608; font-weight: 600; font-size: 45px">Repairing</h2>
+          <h2 style="color: #ec6608; font-weight: 600; font-size: 45px">Recycling</h2>
 
           <p style="font-size: 24px; margin-bottom: 1rem">
-            Imagine a hammer hitting the head of a nail. <br>
-            Now imagine that impact thousands of times a day.
+            Whitemoor is our largest rail recycling plant.
           </p>
 
           <p style="font-size: 24px; margin-bottom: 1rem">
-            That's what railway tracks have to endure - and over<br>
-            time, they can get damaged, and cause delays.
+            Every day, used ballast (the rocks that go under the tracks) <br>
+            sleepers, steels, switches and crossings and rail arrive at the site.
+          </p>
+
+          <p style="font-size: 24px; margin-bottom: 1rem">
+            Materials are processed for reuse, or sold on - to the <br>
+            construction industry for example - instead of going to landfill.
           </p>
         </div>
       </animate-x>

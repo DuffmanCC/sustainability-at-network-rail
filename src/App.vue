@@ -5,6 +5,15 @@
     v-touch:start="startHandler"
     v-touch:end="endHandler"
   >
+    <div
+      v-if="loadingPercent < 100"
+    >
+      <div class="h-screen flex border-white border items-center justify-center">
+        <div class="text-white text-6xl ">Loading: {{ loaded }}</div>
+      </div>
+    </div>
+
+    <div v-else>
 <!--     <header class="bg-white flex justify-center items-center z-50 h-20 relative">
       <div>header (new repo)</div>
     </header> -->
@@ -13,52 +22,54 @@
       {{ deltaYcounter }} | {{ percentage }}%
     </div> -->
 
-    <div
-      v-if="isVertical"
-      class="text-white text-6xl flex text-center justify-center items-center h-screen px-12"
-    >
-      Rotate your device
+      <div
+        v-if="isVertical"
+        class="text-white text-6xl flex text-center justify-center items-center h-screen px-12"
+      >
+        Rotate your device
+      </div>
+
+      <first-scene
+        v-if="!isVertical"
+        :deltaYcounter="deltaYcounter"
+        :windowHeight="windowHeight"
+        :windowWidth="windowWidth"
+      ></first-scene>
+
+      <first-case-study
+        v-if="!isVertical"
+        :deltaYcounter="deltaYcounter"
+        :windowHeight="windowHeight"
+        :windowWidth="windowWidth"
+      ></first-case-study>
+
+      <second-case-study
+        v-if="!isVertical"
+        :deltaYcounter="deltaYcounter"
+        :windowHeight="windowHeight"
+        :windowWidth="windowWidth"
+      ></second-case-study>
+
+      <third-case-study
+        v-if="!isVertical"
+        :deltaYcounter="deltaYcounter"
+        :windowHeight="windowHeight"
+        :windowWidth="windowWidth"
+      ></third-case-study>
+
+      <ending
+        v-if="!isVertical"
+        :deltaYcounter="deltaYcounter"
+        :windowHeight="windowHeight"
+        :windowWidth="windowWidth"
+      ></ending>
     </div>
-
-    <first-scene
-      v-if="!isVertical"
-      :deltaYcounter="deltaYcounter"
-      :windowHeight="windowHeight"
-      :windowWidth="windowWidth"
-    ></first-scene>
-
-    <first-case-study
-      v-if="!isVertical"
-      :deltaYcounter="deltaYcounter"
-      :windowHeight="windowHeight"
-      :windowWidth="windowWidth"
-    ></first-case-study>
-
-    <second-case-study
-      v-if="!isVertical"
-      :deltaYcounter="deltaYcounter"
-      :windowHeight="windowHeight"
-      :windowWidth="windowWidth"
-    ></second-case-study>
-
-    <third-case-study
-      v-if="!isVertical"
-      :deltaYcounter="deltaYcounter"
-      :windowHeight="windowHeight"
-      :windowWidth="windowWidth"
-    ></third-case-study>
-
-    <ending
-      v-if="!isVertical"
-      :deltaYcounter="deltaYcounter"
-      :windowHeight="windowHeight"
-      :windowWidth="windowWidth"
-    ></ending>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import PageLoadProgress from './components/page-load-progress.vue'
 import FirstScene from './components/first-scene.vue'
 import FirstCaseStudy from './components/first-case-study.vue'
 import SecondCaseStudy from './components/second-case-study.vue'
@@ -70,6 +81,8 @@ export default {
   name: 'App',
 
   components: { FirstScene, FirstCaseStudy, SecondCaseStudy, ThirdCaseStudy, Ending },
+
+  mixins: [ PageLoadProgress ],
 
   computed: {
     ...mapState(['deltaYcounter']),
