@@ -13,6 +13,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github-NR:network-rail/sustainability-at-network-rail.git master:gh-pages
+git push -f git@github.com:DuffmanCC/sustainability-at-network-rail.git master:gh-pages
 
 cd -
